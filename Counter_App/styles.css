@@ -51,6 +51,10 @@ button {
     background-color: green;
 }
 
+#reset-btn {
+    background-color: rgb(43, 89, 243);
+}
+
 button:hover {
     opacity: 0.8;
 }

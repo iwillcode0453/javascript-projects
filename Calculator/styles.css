@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.num-el, .sum-btn {
+    width: 300px;
+    font-size: 20px;
+    margin: 10px auto;
+    border: 1px;
+}
+
+#num1-el, #num2-el {
+    margin-right: 1.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+}

@@ -6,18 +6,67 @@
 	font-display: swap;
 }
 
-body {
+* {
+	box-sizing: border-box;
 	margin: 0;
+	padding: 0;
 }
 
-/* h3 {
-	font-family: "ScoreFont", sans-serif;
-	font-size: 24px;
+body {
+	margin: 0;
 	text-align: center;
-	margin: 20px 0;
-} */
+}
+
+h3 {
+	font-family: "ScoreFont", sans-serif;
+	font-size: 60px;
+	/* text-align: center; */
+	/* margin: 10px 0; */
+}
 
 .container {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
+	width: 800px;
+	height: 100vh;
+	margin: 40px auto;
+	border: 2px solid salmon;
+}
+
+.home-container,
+.guest-container {
+	padding-top: 10px;
+	width: 350px;
+	height: auto;
+}
+
+#home-score,
+#guest-score {
+	font-family: "ScoreFont", sans-serif;
+	font-size: 5em;
+	/* text-align: center; */
+	margin: 10px auto;
+	background: black;
+	color: rgb(247, 4, 4);
+	width: 350px;
+	height: 250px;
+	border: 5px solid rgb(67, 53, 196);
+	/* padding-top: 45px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+button {
+	width: 75px;
+	padding: 5px 10px;
+	margin: 10px 3px;
+	border-radius: 8px;
+	font-weight: bolder;
+}
+button:hover {
+	cursor: pointer;
+	background-color: lightgray;
 }

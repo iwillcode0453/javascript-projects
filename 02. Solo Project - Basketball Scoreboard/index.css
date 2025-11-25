@@ -1,8 +1,23 @@
-body {
-    margin: 0;
+@font-face {
+	font-family: "ScoreFont";
+	src: url("font/CursedTimerUlil-Aznm.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
+body {
+	margin: 0;
+}
+
+/* h3 {
+	font-family: "ScoreFont", sans-serif;
+	font-size: 24px;
+	text-align: center;
+	margin: 20px 0;
+} */
+
 .container {
-    display: flex;
-    justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }

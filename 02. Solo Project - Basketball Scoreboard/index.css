@@ -53,8 +53,8 @@ h3 {
 	font-size: 5em;
 	/* text-align: center; */
 	margin: 10px auto;
-	background: #06151a;
-background: linear-gradient(90deg, rgba(6, 21, 26, 1) 100%, rgba(33, 66, 46, 1) 100%, rgba(0, 0, 0, 1) 88%);
+	background: #0106082e;
+/* background: linear-gradient(90deg, rgba(6, 21, 26, 1) 100%, rgba(33, 66, 46, 1) 100%, rgba(0, 0, 0, 1) 88%); */
 	color: rgb(247, 4, 4);
 	width: 350px;
 	height: 250px;
@@ -82,5 +82,7 @@ button {
 }
 button:hover {
 	cursor: pointer;
-	background-color: lightgray;
+	background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 2%, rgba(9, 9, 121, 1) 28%, rgba(0, 212, 255, 1) 95%);
+	color: rgb(255, 255, 255)
 }

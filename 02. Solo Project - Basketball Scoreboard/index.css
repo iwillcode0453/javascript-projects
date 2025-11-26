@@ -20,6 +20,7 @@ body {
 h3 {
 	font-family: "ScoreFont", sans-serif;
 	font-size: 60px;
+	color: white;
 	/* text-align: center; */
 	/* margin: 10px 0; */
 }
@@ -29,14 +30,19 @@ h3 {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	width: 800px;
-	height: 100vh;
+	height: 80vh;
 	margin: 40px auto;
 	border: 2px solid salmon;
+	background-image: radial-gradient(
+		circle farthest-corner at 50% 52.5%,
+		rgba(14, 53, 92, 1) 0%,
+		rgba(16, 14, 72, 1) 90%
+	);
 }
 
 .home-container,
 .guest-container {
-	padding-top: 10px;
+	padding-top: 30px;
 	width: 350px;
 	height: auto;
 }
@@ -47,17 +53,17 @@ h3 {
 	font-size: 5em;
 	/* text-align: center; */
 	margin: 10px auto;
-	background: black;
+	background: #06151a;
+background: linear-gradient(90deg, rgba(6, 21, 26, 1) 100%, rgba(33, 66, 46, 1) 100%, rgba(0, 0, 0, 1) 88%);
 	color: rgb(247, 4, 4);
 	width: 350px;
 	height: 250px;
 	border: 5px solid rgb(67, 53, 196);
-	/* padding-top: 45px; */
+	padding-top: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 
 button {
 	width: 75px;
@@ -65,6 +71,14 @@ button {
 	margin: 10px 3px;
 	border-radius: 8px;
 	font-weight: bolder;
+	background-image: radial-gradient(
+		circle farthest-corner at 50% 52.5%,
+		rgba(14, 53, 92, 1) 0%,
+		rgba(16, 14, 72, 1) 90%
+	);
+	color: white;
+	height: 55px;
+	font-size: 1.5em;
 }
 button:hover {
 	cursor: pointer;

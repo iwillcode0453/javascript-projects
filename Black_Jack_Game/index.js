@@ -5,8 +5,9 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 
-// Select the start-btn element
+
 let startBtn = document.getElementById("start-btn"); 
+let messageEl = document.getElementById("message-el");
 
 // function to start the game
 function startGame() {
@@ -19,7 +20,8 @@ function startGame() {
 			message = "You're out of the game!";
 			isAlive = false;
 	}
-
-	console.log(message);
+    // Display the message to the player with messageEl variable
+    messageEl.textContent = message;
+	
 }
 

@@ -22,7 +22,11 @@ function startGame() {
 // function to start the game
 function renderGame() {
 	// Display thea cards value with cardsel variable
-    cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1] + " " + cards[2];
+    cardsEl.textContent = "Cards: ";
+	// Create a for loop to show all teh cards in teh array
+	for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+	}
 	// Display the sum of the cards with sumEl variable
 	sumEl.textContent = "Sum: " + sum;
     if (sum < 21) {

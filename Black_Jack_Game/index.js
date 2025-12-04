@@ -1,5 +1,5 @@
-let firstCard = 10;
-let secondCard = 4;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let sum = firstCard + secondCard;
 let cards = [firstCard, secondCard];
 let hasBlackJack = false;
@@ -13,6 +13,21 @@ let newCardBtn = document.getElementById("new-card-btn");
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+let faceCardEl = document.getElementById("faceCard");
+
+// Create a function getRandomCard that always return 5
+function getRandomCard() {
+	let randomNumber = Math.floor(Math.random() * 13) + 1;
+	if (randomNumber === 1) {
+		faceCardEl.textContent = `You got an Ace!`;
+		return 11;
+	} else if(randomNumber > 10 && randomNumber <= 13) {
+		faceCardEl.textContent = `You got a face card!`;
+		return 10;
+	} else {
+		return randomNumber;
+	}
+}
 
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
@@ -45,7 +60,7 @@ function renderGame() {
 
 // Function to draw a new card with newCardBtn varialble
 function newCard() {
-	let card = 6;
+	let card = getRandomCard();
 	sum += card;
 	cards.push(card);
 	console.log(cards);

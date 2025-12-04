@@ -6,8 +6,6 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 
-
-
 let startBtn = document.getElementById("start-btn"); 
 let newCardBtn = document.getElementById("new-card-btn");
 let messageEl = document.getElementById("message-el");

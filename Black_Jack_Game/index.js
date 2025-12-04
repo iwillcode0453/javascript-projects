@@ -1,15 +1,24 @@
+// Create a player object to store the name and chips
+let player = {
+	name: "Erick",
+	chips: 150
+}
 // Black Jack Game JavaScript Code
 let sum = 0;
 let cards = [];
 let hasBlackJack = false;
 let isAlive = false;
 let message = "";
-
-let startBtn = document.getElementById("start-btn"); 
-let newCardBtn = document.getElementById("new-card-btn");
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+let playerEl = document.getElementById("player-el");
+// Display player name and chips on playerEl variable
+playerEl.textContent = player.name + ": $" + player.chips;
+
+
+ 
+
 let faceCardEl = document.getElementById("faceCard");
 
 // Create a function getRandomCard that always return 5
@@ -28,6 +37,7 @@ function getRandomCard() {
 
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
+	let startBtn = document.getElementById("start-btn");
 	isAlive = true;
 	let firstCard = getRandomCard();
 	let secondCard = getRandomCard();
@@ -62,12 +72,20 @@ function renderGame() {
 
 // Function to draw a new card with newCardBtn varialble
 function newCard() {
+	let newCardBtn = document.getElementById("new-card-btn");
 	let card = getRandomCard();
 	sum += card;
 	cards.push(card);
 	console.log(cards);
+	
+	
 	if (isAlive === true && hasBlackJack === false) {
 		renderGame();
+	} else {
+		console.log("You cannot draw a new card!");	
+		
 	}
 	
-	}
+}
+
+	console.log(`This is the card array: ${cards}`)

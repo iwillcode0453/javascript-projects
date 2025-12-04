@@ -1,9 +1,8 @@
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
-let sum = firstCard + secondCard;
-let cards = [firstCard, secondCard];
+// Black Jack Game JavaScript Code
+let sum = 0;
+let cards = [];
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 
 let startBtn = document.getElementById("start-btn"); 
@@ -29,6 +28,11 @@ function getRandomCard() {
 
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
+	isAlive = true;
+	let firstCard = getRandomCard();
+	let secondCard = getRandomCard();
+	cards = [firstCard, secondCard];
+	sum = firstCard + secondCard;	
 	renderGame();
 }
 
@@ -62,5 +66,8 @@ function newCard() {
 	sum += card;
 	cards.push(card);
 	console.log(cards);
-	renderGame();
+	if (isAlive === true && hasBlackJack === false) {
+		renderGame();
+	}
+	
 	}

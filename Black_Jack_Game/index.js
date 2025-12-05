@@ -37,7 +37,7 @@ function getRandomCard() {
 
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
-	let startBtn = document.getElementById("start-btn");
+	// let startBtn = document.getElementById("start-btn");
 	isAlive = true;
 	let firstCard = getRandomCard();
 	let secondCard = getRandomCard();
@@ -56,7 +56,7 @@ function renderGame() {
 	}
 	// Display the sum of the cards with sumEl variable
 	sumEl.textContent = "Sum: " + sum;
-    if (sum < 21) {
+    if (sum <= 20) {
 			message = "Do you want to draw a new card?";
 	} else if (sum === 21) {
 		    message = "You've got Blackjack!";
@@ -72,14 +72,13 @@ function renderGame() {
 
 // Function to draw a new card with newCardBtn varialble
 function newCard() {
-	let newCardBtn = document.getElementById("new-card-btn");
-	let card = getRandomCard();
-	sum += card;
-	cards.push(card);
-	console.log(cards);
-	
-	
+	// let newCardBtn = document.getElementById("new-card-btn");
+		
 	if (isAlive === true && hasBlackJack === false) {
+		let card = getRandomCard();
+		sum += card;
+		cards.push(card);
+		console.log(cards);
 		renderGame();
 	} else {
 		console.log("You cannot draw a new card!");	

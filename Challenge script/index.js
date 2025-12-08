@@ -21,6 +21,7 @@ for (let i = 0; i < sentence.length; i++) {
 	console.log(greetingEl.textContent);
 }
 
+// Object exercise
 const personObject = {
 	name: "Erickson",
 	age: 47,
@@ -31,6 +32,7 @@ function logData() {
 	console.log(`${personObject.name} is ${personObject.age} years old and lives in the ${personObject.country}.`)
 }
 
+// Condtional statements exercise
 let age = 15;
 
 if (age < 6) {
@@ -44,3 +46,26 @@ if (age < 6) {
 } else {
 	console.log("Senior Citizen Discount")
 }
+
+// Looping exercise
+let largeCountries = ["China", "India", "USA", "Indonesia", "Pakistan"];
+
+for (let i = 0; i < largeCountries.length; i++) {
+	console.log("The largest countries in world are: " + largeCountries[i] + ".");
+}
+
+// pop() and push() method and shift() and unshift() method exercise
+let largeCountries2 = ["Tuvalu", "India", "USA", "Indonesia", "Monaco"];
+
+// Remove the first item in the array
+largeCountries2.shift()
+console.log(largeCountries2)
+//  Replace the first item with "China"
+largeCountries2.unshift("China")
+console.log(`This is the shifted method result: ${largeCountries2}`)
+// Remove the last item in the array with pop()
+largeCountries2.pop().
+console.log(`This is the popped method result: ${largeCountries2.pop()}`)
+// Replace the last item with push()
+largeCountries2.push("Pakistan")
+console.log(`This is the pushed method result: ${largeCountries2}`)

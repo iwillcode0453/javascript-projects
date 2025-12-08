@@ -69,3 +69,12 @@ console.log(`This is the popped method result: ${largeCountries2}`)
 // Replace the last item with push()
 largeCountries2.push("Pakistan")
 console.log(`This is the pushed method result: ${largeCountries2}`)
+
+// Logical operators exercise
+let dayOfMonth = 13
+let weekday = "Friday"
+
+if (dayOfMonth === 13 && weekday === "Friday") {
+	console.log("Oh no!!!!😱");
+	
+}

@@ -13,6 +13,12 @@ let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
 let playerEl = document.getElementById("player-el");
+let resetGameBtn = document.getElementById("resetGame");
+
+// Add an event listener to the resetGameBtn to reload the page when clicked
+resetGameBtn.addEventListener("click", function() {
+	location.reload();
+});
 // Display player name and chips on playerEl variable
 playerEl.textContent = player.name + ": $" + player.chips;
 
@@ -82,6 +88,7 @@ function newCard() {
 		renderGame();
 	} else {
 		console.log("You cannot draw a new card!");	
+		messageEl.textContent = "You cannot draw a new card!";
 		
 	}
 	

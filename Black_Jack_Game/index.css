@@ -18,7 +18,8 @@ h1 {
 }
 
 #start-btn,
-#new-card-btn {
+#new-card-btn,
+#resetGame {
 	background: goldenrod;
 	width: 150px;
 	color: #016f32;

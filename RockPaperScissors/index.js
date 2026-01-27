@@ -3,7 +3,7 @@ function startGame() {
 	// Create a list of the three choices in Rock Paper Scissors
 	const choices = ["Rock", "Paper", "Scissors"];
 
-	// Ask the player to type their choice and save it
+	// Ask the player to type their choice and save it the prompt given by the user
 	const userChoice = prompt("Enter your choice (Rock, Paper, Scissors):");
 
 	// Check if the player typed something that's NOT in our choices list

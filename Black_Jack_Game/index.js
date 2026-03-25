@@ -3,7 +3,7 @@ let player = {
 	name: "Erick",
 	chips: 150
 }
-// Black Jack Game JavaScript Code
+// Black Jack Game JavaScript Variables Code
 let sum = 0;
 let cards = [];
 let hasBlackJack = false;
@@ -16,9 +16,18 @@ let playerEl = document.getElementById("player-el");
 let resetGameBtn = document.getElementById("resetGame");
 
 // Add an event listener to the resetGameBtn to reload the page when clicked
-resetGameBtn.addEventListener("click", function() {
-	location.reload();
-});
+// resetGameBtn.addEventListener("click", function() {
+// 	location.reload();
+// });
+
+// Reset the game function() using vanilla JavaScript to reload the page on its original state
+function restartGame() {
+	 cardsEl.textContent = "Cards: ";
+	 sumEl.textContent = "Sum: ";
+	 messageEl.textContent = "";
+	 playerEl.textContent = player.name + ": $" + player.chips;	
+}
+
 // Display player name and chips on playerEl variable
 playerEl.textContent = player.name + ": $" + player.chips;
 

@@ -4,29 +4,33 @@ let player = {
 	chips: 150
 }
 // Black Jack Game JavaScript Variables Code
-let sum = 0;
-let cards = [];
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
+let cards = [firstCard, secondCard];
+let sum = firstCard + secondCard;
 let hasBlackJack = false;
 let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+let faceCardEl = document.getElementById("faceCard-el")
 let playerEl = document.getElementById("player-el");
 let resetGameBtn = document.getElementById("resetGame");
 
 // Add an event listener to the resetGameBtn to reload the page when clicked
-// resetGameBtn.addEventListener("click", function() {
-// 	location.reload();
-// });
+resetGameBtn.addEventListener("click",function() {
+	location.reload();
+});
 
 // Reset the game function() using vanilla JavaScript to reload the page on its original state
-function restartGame() {
-	 cardsEl.textContent = "Cards: ";
-	 sumEl.textContent = "Sum: ";
-	 messageEl.textContent = "";
-	 playerEl.textContent = player.name + ": $" + player.chips;	
-}
+// function restartGame() {
+// 	 cardsEl.textContent = "Cards: ";
+// 	 sumEl.textContent = "Sum: ";
+// 	 messageEl.textContent = "";
+// 	 faceCardEl.textContent = "This is where Ace and Face cards will appear!";
+// 	 playerEl.textContent = player.name + ": $" + player.chips;	
+// }
 
 // Display player name and chips on playerEl variable
 playerEl.textContent = player.name + ": $" + player.chips;
@@ -34,7 +38,7 @@ playerEl.textContent = player.name + ": $" + player.chips;
 
  
 
-let faceCardEl = document.getElementById("faceCard-el");
+
 
 // Create a function getRandomCard that always return 5
 function getRandomCard() {
@@ -53,11 +57,11 @@ function getRandomCard() {
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
 	// let startBtn = document.getElementById("start-btn");
-	isAlive = true;
-	let firstCard = getRandomCard();
-	let secondCard = getRandomCard();
-	cards = [firstCard, secondCard];
-	sum = firstCard + secondCard;	
+	// isAlive = true;
+	// let firstCard = getRandomCard();
+	// let secondCard = getRandomCard();
+	// cards = [firstCard, secondCard];
+	// sum = firstCard + secondCard;	
 	renderGame();
 }
 
@@ -73,6 +77,7 @@ function renderGame() {
 	sumEl.textContent = "Sum: " + sum;
     if (sum <= 20) {
 			message = "Do you want to draw a new card?";
+			
 	} else if (sum === 21) {
 		    message = "You've got Blackjack!";
 			hasBlackJack = true;
@@ -91,8 +96,8 @@ function newCard() {
 		
 	if (isAlive === true && hasBlackJack === false) {
 		let card = getRandomCard();
-		sum += card;
 		cards.push(card);
+		sum += card;
 		console.log(cards);
 		renderGame();
 	} else {

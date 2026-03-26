@@ -4,3 +4,25 @@ body {
     background-image: url(images/table.png);
     color: white;
 }
+
+h1 {
+    color: goldenrod;
+}
+
+button {
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin: 8px auto;
+    cursor: pointer;
+    width: 200px;
+}
+
+button:hover {
+    background-color: rgb(230, 178, 48);
+}

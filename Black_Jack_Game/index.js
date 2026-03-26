@@ -34,7 +34,7 @@ playerEl.textContent = player.name + ": $" + player.chips;
 
  
 
-let faceCardEl = document.getElementById("faceCard");
+let faceCardEl = document.getElementById("faceCard-el");
 
 // Create a function getRandomCard that always return 5
 function getRandomCard() {

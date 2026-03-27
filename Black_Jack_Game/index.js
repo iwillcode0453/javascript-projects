@@ -1,54 +1,48 @@
 // Create a player object to store the name and chips
 let player = {
 	name: "Erick",
-	chips: 150
-}
+	chips: 150,
+};
 // Black Jack Game JavaScript Variables Code
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
 let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
-let faceCardEl = document.getElementById("faceCard-el")
+let faceCardEl = document.getElementById("faceCard-el");
 let playerEl = document.getElementById("player-el");
 let resetGameBtn = document.getElementById("resetGame");
 
 // Add an event listener to the resetGameBtn to reload the page when clicked
-resetGameBtn.addEventListener("click",function() {
-	location.reload();
-});
+// resetGameBtn.addEventListener("click",function() {
+// 	location.reload();
+// });
 
 // Reset the game function() using vanilla JavaScript to reload the page on its original state
-// function restartGame() {
-// 	 cardsEl.textContent = "Cards: ";
-// 	 sumEl.textContent = "Sum: ";
-// 	 messageEl.textContent = "";
-// 	 faceCardEl.textContent = "This is where Ace and Face cards will appear!";
-// 	 playerEl.textContent = player.name + ": $" + player.chips;	
-// }
+function restartGame() {
+	cardsEl.textContent = "Cards: ";
+	sumEl.textContent = "Sum: ";
+	messageEl.textContent = "";
+	faceCardEl.textContent = "This is where Ace and Face cards will appear!";
+	playerEl.textContent = player.name + ": $" + player.chips;
+	rederGame();
+}
 
 // Display player name and chips on playerEl variable
 playerEl.textContent = player.name + ": $" + player.chips;
 
-
- 
-
-
-
 // Create a function getRandomCard that always return 5
 function getRandomCard() {
 	let randomNumber = Math.floor(Math.random() * 13) + 1;
-	if (randomNumber === 1) {
-		faceCardEl.textContent = `You got an Ace!`;
-		return 11;
-	} else if(randomNumber > 10 && randomNumber <= 13) {
+	if (randomNumber > 10) {
 		faceCardEl.textContent = `You got a face card!`;
 		return 10;
+	} else if (randomNumber === 1) {
+		faceCardEl.textContent = `You got an Ace!`;
+		return 11;
 	} else {
 		return randomNumber;
 	}
@@ -57,55 +51,51 @@ function getRandomCard() {
 // Create a renderGame function to invoke the startGame() function
 function startGame() {
 	// let startBtn = document.getElementById("start-btn");
-	// isAlive = true;
-	// let firstCard = getRandomCard();
-	// let secondCard = getRandomCard();
-	// cards = [firstCard, secondCard];
-	// sum = firstCard + secondCard;	
+	isAlive = true;
+	let firstCard = getRandomCard();
+	let secondCard = getRandomCard();
+	cards = [firstCard, secondCard];
+	sum = firstCard + secondCard;
 	renderGame();
 }
 
 // function to start the game
 function renderGame() {
 	// Display thea cards value with cardsel variable
-    cardsEl.textContent = "Cards: ";
+	cardsEl.textContent = "Cards: ";
 	// Create a for loop to show all teh cards in teh array
 	for (let i = 0; i < cards.length; i++) {
-        cardsEl.textContent += cards[i] + " "
+		cardsEl.textContent += cards[i] + " ";
 	}
 	// Display the sum of the cards with sumEl variable
 	sumEl.textContent = "Sum: " + sum;
-    if (sum <= 20) {
-			message = "Do you want to draw a new card?";
-			
+	if (sum <= 20) {
+		message = "Do you want to draw a new card?";
 	} else if (sum === 21) {
-		    message = "You've got Blackjack!";
-			hasBlackJack = true;
+		message = "You've got Blackjack!";
+		hasBlackJack = true;
 	} else {
-			message = "You're out of the game!";
-			isAlive = false;
+		message = "You're out of the game!";
+		isAlive = false;
 	}
-    // Display the message to the player with messageEl variable
-    messageEl.textContent = message;
-	
+	// Display the message to the player with messageEl variable
+	messageEl.textContent = message;
 }
 
 // Function to draw a new card with newCardBtn varialble
 function newCard() {
 	// let newCardBtn = document.getElementById("new-card-btn");
-		
+
 	if (isAlive === true && hasBlackJack === false) {
 		let card = getRandomCard();
-		cards.push(card);
 		sum += card;
+		cards.push(card);
 		console.log(cards);
 		renderGame();
 	} else {
-		console.log("You cannot draw a new card!");	
+		console.log("You cannot draw a new card!");
 		messageEl.textContent = "You cannot draw a new card!";
-		
 	}
-	
 }
 
-	console.log(`This is the card array: ${cards}`)
+console.log(`This is the card array: ${cards}`);

@@ -3,6 +3,7 @@ body {
     text-align: center;
     background-image: url(images/table.png);
     background-size: cover;
+    background-position: center;
     color: white;
 }
 
@@ -18,7 +19,7 @@ button {
     padding: 10px 20px;
     font-size: 1.3em;
     font-weight: bold;
-    display: inline-block;
+    display: block;
     margin: 8px auto;
     cursor: pointer;
     width: 200px;

@@ -28,7 +28,7 @@ function restartGame() {
 	messageEl.textContent = "";
 	faceCardEl.textContent = "This is where Ace and Face cards will appear!";
 	playerEl.textContent = player.name + ": $" + player.chips;
-	rederGame();
+	
 }
 
 // Display player name and chips on playerEl variable
